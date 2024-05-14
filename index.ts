@@ -140,7 +140,7 @@ function processTrackedBarcodes(): void {
     ) {
       const audio = document.getElementById('playBeep') as HTMLAudioElement;
       audio.play;
-      console.log("beep played");
+      
       barcodeTracking?.setEnabled(false);
       doneButton.style.backgroundColor = '#007bff';
   }else{
