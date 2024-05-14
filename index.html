@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barcode Scanner</title>
+    <script type="module" src="index.ts"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: rgb(63, 62, 62); /* Light gray background */
+        font-family: Arial, sans-serif; /* Change font for better readability */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+        
+      }
+
+      #data-capture-view {
+        width: 100%; /* Adjust width to fit screen */
+         /* Maximum width */
+        height: 350px; /* Adjust height as needed */
+        background: #fff; /* White background */
+        border-radius: 8px; /* Rounded corners */
+         /* Drop shadow */
+        margin-bottom: 15px; /* Spacing from the labelInfo section */
+      }
+
+      #labelInfo {
+        width: 90%; /* Adjust width to fit screen */
+        max-width: 400px; /* Maximum width */
+        background: #fff; /* White background */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        padding: 20px; /* Padding for inner content */
+      }
+
+      #labelInfo table {
+        width: 100%;
+      }
+
+      #labelInfo table td {
+        padding: 5px;
+        margin-bottom: 20px;
+      }
+
+      .input-field {
+        width: 100%;
+        margin-bottom: 5px; /* Adjust spacing between input fields */
+      }
+
+      input[type="text"] {
+        width: calc(100% - 20px); /* Adjust width of text inputs */
+        padding: 6px; /* Padding for text inputs */
+        font-size: 14px; /* Adjust font size */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 4px; /* Rounded corners */
+      }
+
+      
+
+      button {
+        margin-top: 20px;
+        width: 50%;
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 20px; /* Adjust font size */
+        background-color: #007bff; /* Blue button color */
+        color: #fff; /* White text color */
+        border: none; /* No border */
+        border-radius: 4px; /* Rounded corners */
+        cursor: pointer; /* Cursor style */
+      }
+      #resetButton {
+      background-color: #ffffff;
+      color: #333;
+      
+    }
+    #doneButton {
+      background-color: #ffffff;
+      color: #333;
+      
+      padding: 10px 30px;
+    }
+
+      button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+    </style>    
+    <audio id="playBeep" src="scanner-beep.wav" autoplay="false" autostart="false"></audio>
+  </head>
+  <body>
+    <div id="data-capture-view">
+      <canvas id="capturedImage" width="413" height="350"></canvas>
+    </div>
+    <div id="labelInfo">
+      <table>
+        <tr>
+          <td>P/N</td>
+          <td><input type="text" id="partNumber" class="input-field" value="" /></td>
+        </tr>
+        <tr>
+          <td>QTY</td>
+          <td><input type="text" id="quantity" class="input-field" value="" /></td>
+        </tr>
+        <tr>
+          <td>SUP</td>
+          <td><input type="text" id="supplier" class="input-field" value="" /></td>
+        </tr>
+        <tr>
+          <td>LOT</td>
+          <td><input type="text" id="lot" class="input-field" value="" /></td>
+        </tr>
+        <tr>
+          <td>SERIAL</td>
+          <td><input type="text" id="serialNumber" class="input-field" /></td>
+        </tr>
+      </table>
+    </div>
+      <button id="resetButton">Reset Scanner</button>
+    </tr>
+
+      <button id="doneButton">Scan</button>
+    </div>
+  </body>
+</html>
