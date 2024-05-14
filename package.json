@@ -13,6 +13,7 @@
     "lint": "eslint --fix ."
   },
   "dependencies": {
+    "@vercel/postgres": "^0.8.0",
     "lit": "^2.8.0",
     "scandit-web-datacapture-barcode": "^6.23.2",
     "scandit-web-datacapture-core": "6.23.2"
