@@ -5,7 +5,6 @@ import {
   DataCaptureView,
   FrameSourceState,
   configure,
-  resetConfigure,
 } from "scandit-web-datacapture-core";
 import {
   BarcodeTrackingSession,
@@ -18,7 +17,6 @@ import {
   BarcodeTrackingScenario,
   BarcodeTrackingSettings,
   Symbology,
-  SymbologyDescription,
   barcodeCaptureLoader,
 } from 'scandit-web-datacapture-barcode';
 
